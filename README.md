@@ -35,12 +35,43 @@ Un agricultor necesita monitorear la temperatura de su invernadero para asegurar
 4. Verifica si todas las temperaturas están entre 15°C y 30°C.
 5. Si alguna temperatura está fuera de 10°C–35°C, muestra una advertencia.
 
+
+
 **Puntos asignados:** 25 pts
 
 **Criterios evaluados:**
 - Uso correcto de lista y cálculos (10 pts)
 - Evaluación de condiciones lógicas (10 pts)
 - Orden y claridad del código (5 pts)
+
+temperaturas = []
+
+for i in range(5):
+    entrada_temperaturas = float(input("Ingrese 5 Temperaturas: "))
+    temperaturas.append(entrada_temperaturas)
+cantidad_temperaturas = len(temperaturas)
+temperatura_maxima = max(temperaturas)
+
+promedio = sum(temperaturas) / cantidad_temperaturas
+
+
+print(temperaturas)
+print(f"La temperatura promedio es: {promedio} y la temperatura maxima es: {temperatura_maxima}")
+
+
+check = True
+for t in temperaturas:
+    if t < 15 or t > 30:
+        check = False
+        break
+if check:
+    print("Todas las temperaturas estan entre 15°C y 30°C")
+else: 
+    print("No todas las temperaturas estan en 15° y 30°")
+
+for t in temperaturas:
+    if t < 10 or t > 35:
+        print("Advertencia: almenos una de las temperaturas esta fuera del rango 10° y 35°")
 
 ---
 
@@ -83,3 +114,11 @@ En una empresa, el acceso a una zona restringida depende de la edad, el rol de s
 - Claridad de la salida (5 pts)
 
 ---
+edad = input("Ingrese su Edad: ")
+verificar_supervisor = input("¿Es usted supervisor?")
+autorizacion = input("¿Tiene Autorizacion: ?")
+
+if edad >= 18 and verificar_supervisor == "si" or autorizacion == "s":
+    print("Tiene autorizacion")
+else:
+    print("No tiene")
